@@ -81,7 +81,6 @@ const AdminDashboard = () => {
         </ul>
       </nav>
       <main id="main-content">
-        <h1>Click on an Asset to request</h1>
         {display !== "profile" && (
           <div className="bottom">
             {display === "dashboard" && <AvailableAssets />}
@@ -98,5 +97,4 @@ const AdminDashboard = () => {
     </>
   );
 };
-
 export default AdminDashboard;

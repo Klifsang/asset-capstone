@@ -6,6 +6,7 @@ import { AuthProvider } from "./AuthContext.jsx";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from "./components/common/Login.jsx";
 import SignUp from "./components/common/SignUp.jsx";
+import Profile from "./components/common/Profile.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <AuthProvider>
@@ -14,7 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/" element={<App />}/>
           <Route path="/login/*" element={<Login />}/>
           <Route path="/signup/*" element={<SignUp />}/>
-          {/* <Route path="/profile/:id" element={< ProfileContent/>} /> */}
+          <Route path="/profile/:id" element={< Profile/>} />
         </Routes>
     </BrowserRouter>
   </AuthProvider>

@@ -38,7 +38,9 @@ const Staff = () => {
         <tbody>
           {users.map(user => (
             <tr key={user.id}>
-            <td data-label = "User Name">{user.username}</td>
+              <Link to={`/profile/${user.id}`}>
+                <td data-label = "User Name">{user.username}</td>
+              </Link>
             <td data-label = "Department">{user.department}</td>
             <td data-label = "Status">{user.status}</td>
             <td data-label = "Email">{user.email}</td>

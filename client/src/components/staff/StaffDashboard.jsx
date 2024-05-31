@@ -75,8 +75,8 @@ const StaffDashboard = () => {
             {display === "notifications" && <Notifications />}
           </div>
         )}
+        {display === "profile" && <Profile />}
       </main>
-      {display === "profile" && <Profile />}
     </>
   );
 };

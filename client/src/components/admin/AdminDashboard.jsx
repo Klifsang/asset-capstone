@@ -92,8 +92,8 @@ const AdminDashboard = () => {
             {display === "notifications" && <Notifications />}
           </div>
         )}
+        {display === "profile" && <Profile />}
       </main>
-      {display === "profile" && <Profile />}
     </>
   );
 };

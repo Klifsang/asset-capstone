@@ -271,3 +271,9 @@ article{
   padding: 15px;
   border-top: 1px solid #ccc;
 }
+
+.input-centered{
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+}

@@ -49,12 +49,11 @@ const Profile = () => {
   const { username, fullname, address, email, phonenumber, role, status, department } = profile;
 
   return (
-    <div className="flex justify-center items-center h-full overflow-auto w-full bg-gray-100">
-      <div className="container w-auto text-center">
+      <div className="container h-full overflow-auto">
         <div className="brand-logo"></div>
         <div className="brand-title text-center">User Details</div>
-        <div className="grid grid-cols-2 gap-2">
-          <div className="col-span-1">
+        <form className="inputs">
+          <div className="flex one two-700 center">
             <label>Full Name</label>
             <input
             className="input-centered"
@@ -95,9 +94,7 @@ const Profile = () => {
               onChange={handleInputChange}
               required
             />
-          </div>
 
-          <div className="col-span-1">
             <label>Department</label>
             <input
             className="input-centered"
@@ -129,10 +126,9 @@ const Profile = () => {
               required
             />
           </div>
-        </div>
+        </form>
         <button onClick={handleToggleDisable}>Edit account</button>
       </div>
-    </div>
   );
 };
 

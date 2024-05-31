@@ -54,7 +54,7 @@ const Profile = () => {
 
   const {
     username,
-    fullname,
+    // fullname,
     address,
     email,
     phonenumber,

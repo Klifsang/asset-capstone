@@ -9,7 +9,7 @@ const Profile = () => {
   id = id || user.id; // Default to '1' if id is not provided
 
   console.log(id);
-  
+
   const [profile, setProfile] = useState({
     username: "",
     fullname: "",
@@ -46,89 +46,90 @@ const Profile = () => {
     setIsDisabled((prevState) => !prevState);
   };
 
-  const { username, fullname, address, email, phonenumber, role, status, department } = profile;
+  const {
+    username,
+    fullname,
+    address,
+    email,
+    phonenumber,
+    role,
+    status,
+    department,
+  } = profile;
 
   return (
-      <div className="container h-full overflow-auto">
-        <div className="brand-logo"></div>
-        <div className="brand-title text-center">User Details</div>
-        <form className="inputs">
-          <div className="flex one two-700 center">
-            <label>Full Name</label>
+    <div className="container h-full overflow-auto">
+      <div className="brand-logo"></div>
+      <div className="brand-title text-center">User Details</div>
+      <form className="inputs" onSubmit={handleRegister}>
+        <div className="flex one two-700 center">
+          <div>
+            <label>Role</label>
             <input
-            className="input-centered"
               disabled={isDisabled}
               type="text"
-              name="fullname"
-              value={fullname}
+              value={role}
               onChange={handleInputChange}
               required
             />
             <label>User Name</label>
             <input
-            className="input-centered"
               disabled={isDisabled}
               type="text"
-              name="username"
               value={username}
               onChange={handleInputChange}
               required
             />
             <label>Email</label>
             <input
-            className="input-centered"
               disabled={isDisabled}
               type="email"
-              name="email"
               value={email}
               onChange={handleInputChange}
               required
             />
             <label>Phone Number</label>
             <input
-            className="input-centered"
               disabled={isDisabled}
               type="text"
-              name="phonenumber"
               value={phonenumber}
               onChange={handleInputChange}
               required
             />
+          </div>
 
+          <div>
             <label>Department</label>
             <input
-            className="input-centered"
               disabled={isDisabled}
               type="text"
-              name="department"
               value={department}
               onChange={handleInputChange}
               required
             />
             <label>Address</label>
             <input
-            className="input-centered"
               disabled={isDisabled}
               type="text"
-              name="address"
               value={address}
               onChange={handleInputChange}
               required
             />
-            <label>Role</label>
+            <label>Confirm Password</label>
             <input
-            className="input-centered"
               disabled={isDisabled}
-              type="text"
-              name="role"
-              value={role}
+              type="password"
+              value={password}
               onChange={handleInputChange}
               required
             />
           </div>
-        </form>
-        <button onClick={handleToggleDisable}>Edit account</button>
-      </div>
+          <button type="submit" onClick={handleToggleDisable}>
+            Edit account
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 

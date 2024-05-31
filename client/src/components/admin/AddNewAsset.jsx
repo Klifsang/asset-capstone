@@ -2,7 +2,9 @@ import React from 'react'
 
 const AddNewAsset = () => {
   return (
-    <div>AddNewAsset</div>
+    <div>
+      <h1>Add New Asset</h1>
+    </div>
   )
 }
 

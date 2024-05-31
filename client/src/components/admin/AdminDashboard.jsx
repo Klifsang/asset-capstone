@@ -80,8 +80,6 @@ const AdminDashboard = () => {
           ))}
         </ul>
       </nav>
-
-      
       <main id="main-content">
         <h1>Click in an Asset to request</h1>
         <div className="bottom">
@@ -91,10 +89,11 @@ const AdminDashboard = () => {
           {display === "addAssets" && <AddNewAsset />}
           {display === "requests" && <AllRequests />}
           {display === "myRequests" && <MyRequests />}
-          {display === "profile" && <Profile />}
+          
           {display === "notifications" && <Notifications />}
         </div>
       </main>
+      {display === "profile" && <Profile />}
     </>
   );
 };

@@ -121,14 +121,14 @@ const Profile = () => {
               onChange={handleInputChange}
               required
             />
-            <label>Confirm Password</label>
+            {/* <label>Confirm Password</label>
             <input
               disabled={isDisabled}
               type="password"
               value={password}
               onChange={handleInputChange}
               required
-            />
+            /> */}
           </div>
           <button type="submit" onClick={handleToggleDisable}>
             Edit account

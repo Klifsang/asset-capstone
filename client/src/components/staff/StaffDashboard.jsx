@@ -72,10 +72,10 @@ const StaffDashboard = () => {
           {display === "dashboard" && <AvailableAssets />}
           {display === "myAssets" && <MyAssets />}
           {display === "myRequests" && <MyRequests />}
-          {display === "profile" && <Profile />}
           {display === "notifications" && <Notifications />}
         </div>
       </main>
+      {display === "profile" && <Profile />}
     </>
   );
 };

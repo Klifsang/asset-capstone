@@ -81,16 +81,18 @@ const AdminDashboard = () => {
         </ul>
       </nav>
       <main id="main-content">
-        <h1>Click in an Asset to request</h1>
-        <div className="bottom">
-          {display === "dashboard" && <AvailableAssets />}
-          {display === "users" && <Staff />}
-          {display === "myAssets" && <MyAssets />}
-          {display === "addAssets" && <AddNewAsset />}
-          {display === "requests" && <AllRequests />}
-          {display === "myRequests" && <MyRequests />}
-          {display === "notifications" && <Notifications />}
-        </div>
+        <h1>Click on an Asset to request</h1>
+        {display !== "profile" && (
+          <div className="bottom">
+            {display === "dashboard" && <AvailableAssets />}
+            {display === "users" && <Staff />}
+            {display === "myAssets" && <MyAssets />}
+            {display === "addAssets" && <AddNewAsset />}
+            {display === "requests" && <AllRequests />}
+            {display === "myRequests" && <MyRequests />}
+            {display === "notifications" && <Notifications />}
+          </div>
+        )}
       </main>
       {display === "profile" && <Profile />}
     </>

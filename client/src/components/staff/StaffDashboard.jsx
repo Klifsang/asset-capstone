@@ -65,15 +65,16 @@ const StaffDashboard = () => {
         </ul>
       </nav>
 
-      
       <main id="main-content">
         <h1>Click in an Asset to request</h1>
-        <div className="bottom">
-          {display === "dashboard" && <AvailableAssets />}
-          {display === "myAssets" && <MyAssets />}
-          {display === "myRequests" && <MyRequests />}
-          {display === "notifications" && <Notifications />}
-        </div>
+        {display !== "profile" && (
+          <div className="bottom">
+            {display === "dashboard" && <AvailableAssets />}
+            {display === "myAssets" && <MyAssets />}
+            {display === "myRequests" && <MyRequests />}
+            {display === "notifications" && <Notifications />}
+          </div>
+        )}
       </main>
       {display === "profile" && <Profile />}
     </>

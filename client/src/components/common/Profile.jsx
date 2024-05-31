@@ -45,6 +45,12 @@ const Profile = () => {
   const handleToggleDisable = () => {
     setIsDisabled((prevState) => !prevState);
   };
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    console.log(profile);
+    await HttpClient.post("/api/admin/update", profile);
+    handleToggleDisable();
+  }
 
   const {
     username,

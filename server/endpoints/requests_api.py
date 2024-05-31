@@ -42,9 +42,9 @@ def patch_requests():
                     status = "approved"
                     print (asset.quantity)
                     asset.quantity -= 1
-        notif = Notifications(request_id=id, user_id=rquest.user_id, status=status, asset_id=rquest.asset_id)
-        db.session.add(notif)
-        db.session.commit()
+                notif = Notifications(request_id=id, user_id=rquest.user_id, status=status, asset_id=rquest.asset_id, assetname=rquest.assetname)
+                db.session.add(notif)
+            db.session.commit()
     return {"message": "Request updated successfully"}, 201
 
 

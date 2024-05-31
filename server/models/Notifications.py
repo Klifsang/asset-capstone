@@ -9,3 +9,4 @@ class Notifications(db.Model, SerializerMixin):
     user_id = db.Column(db.Integer)
     asset_id = db.Column(db.Integer)
     status = db.Column(db.String)
+    assetname =db.Column(db.String)

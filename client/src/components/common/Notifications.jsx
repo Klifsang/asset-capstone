@@ -44,7 +44,7 @@ const Notifications = () => {
 
   return (
     <div className="App">
-      <h1>Collapsible Component Example</h1>
+      <h1>Notifications</h1>
       {notifs.map((notification) => (
         <Collapsible title="Section 1">
           <p>This is the content of section 1.</p>

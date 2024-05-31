@@ -1,0 +1,273 @@
+body {
+  display: flex;
+  margin: 0;
+  background-color: rgb(248, 246, 246);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(248, 246, 246);
+  color: rgba(8, 8, 8, 0.897);
+  padding: 10px;
+  z-index: 1000;
+}
+
+#toggle-nav {
+  background: none;
+  border: none;
+  color: #1e1d1d;
+  font-size: 20px;
+  cursor: pointer;
+  display: none; /* Hide by default */
+}
+
+.side-nav {
+  width: 200px;
+  background-color: rgb(248, 246, 246);
+  color: white;
+  height: 100vh;
+  position: fixed;
+  top: 50px; /* Adjusted for the header height */
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  transition: transform 0.3s ease;
+}
+
+.side-nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.side-nav ul li {
+  padding: 10px 15px;
+  text-align: left;
+}
+
+.side-nav ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+
+#main-content {
+  margin-left: 200px; /* Same width as the side nav */
+  padding: 20px;
+  flex-grow: 1;
+  margin-top: 50px; /* Adjusted for the header height */
+}
+
+@media (max-width: 768px) {
+  .side-nav {
+    transform: translateX(-100%);
+  }
+  #main-content {
+    margin-left: 0;
+}
+  .side-nav.open {
+    transform: translateX(0);
+  }
+
+  #toggle-nav {
+    display: block; /* Show on small screens */
+  }
+}
+
+fieldset{
+    width: 400px;
+}
+
+
+.button-black {
+    width: 100%;
+    font-weight: 500 !important;
+    color: #000;
+    height: 40px;
+    font-weight: 900;
+    background: transparent;
+    border: .5px solid grey;
+    border-radius: 4px;
+    transition: all .3s ease-in;
+}
+.button-black:hover {
+    background-color: #000;
+    color: aliceblue;
+}
+
+.profile{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    padding: 3px;
+}
+
+
+.flex{
+    text-align: center;
+}
+
+
+.bottom {
+    gap: 4rem;
+    height: 560px;
+    overflow: auto;
+    outline: 1px solid rgba(128, 128, 128, .404);
+    border-radius: 20px;
+    padding: 10px;
+}
+p{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+
+
+.ant-card-hoverable {
+    cursor: pointer;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+
+.ant-card-bordered {
+    border: 1px solid #f0f0f0;
+}
+.ant-card {
+    box-sizing: border-box;
+    margin: 1px;
+    padding: 2px;
+    color: rgba(0, 0, 0, 0.88);
+    font-size: 14px;
+    line-height: 1.5714285714285714;
+    list-style: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    position: relative;
+    background: #ffffff;
+    border-radius: 8px;
+}
+img{
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+
+table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+table * {
+  position: relative;
+}
+table td, table th {
+  padding-left: 8px;
+}
+table thead tr {
+  height: 60px;
+  background: #FFED86;
+  font-size: 16px;
+}
+table tbody tr {
+  height: 48px;
+  border-bottom: 1px solid #E3F1D5;
+}
+table tbody tr:last-child {
+  border: 0;
+}
+table td, table th {
+  text-align: left;
+}
+table td.l, table th.l {
+  text-align: right;
+}
+table td.c, table th.c {
+  text-align: center;
+}
+table td.r, table th.r {
+  text-align: center;
+}
+
+@media screen and (max-width: 35.5em) {
+  table {
+    display: block;
+  }
+  table > *, table tr, table td, table th {
+    display: block;
+  }
+  table thead {
+    display: none;
+  }
+  table tbody tr {
+    height: auto;
+    padding: 8px 0;
+  }
+  table tbody tr td {
+    padding-left: 45%;
+    margin-bottom: 12px;
+  }
+  table tbody tr td:last-child {
+    margin-bottom: 0;
+  }
+  table tbody tr td:before {
+    position: absolute;
+    font-weight: 700;
+    width: 40%;
+    left: 10px;
+    top: 0;
+    content: attr(data-label);
+  }
+
+}
+body {
+  font: 400 14px "Calibri", "Arial";
+  padding: 20px;
+}
+
+blockquote {
+  color: rgb(10, 10, 10);
+  text-align: center;
+}
+
+article{
+  width: 350px;
+}
+
+.collapsible {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.collapsible-header {
+  background-color: #f7f7f7;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.collapsible-header h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.collapsible-header span {
+  font-size: 24px;
+}
+
+.collapsible-content {
+  padding: 15px;
+  border-top: 1px solid #ccc;
+}

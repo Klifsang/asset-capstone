@@ -26,7 +26,7 @@ const Profile = () => {
 
   useEffect(() => {
     async function getUser() {
-      const response = await HttpClient.post("/api/admin/get", {
+      const response = await HttpClient.post("/api/staff/getstaff", {
         id: id,
       });
       console.log(response);

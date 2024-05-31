@@ -40,7 +40,8 @@ def login_required(f):
     def decorated_function(*args, **kwargs):
         user_id = session.get("user_id")
         if user_id is None:
-            return jsonify({'message': 'This is a protected page'}), 401
+            return redirect('/login')
+            # return jsonify({'message': 'This is a protected page'}), 401
         return f(*args, **kwargs)
     return decorated_function
 

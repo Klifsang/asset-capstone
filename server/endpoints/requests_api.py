@@ -31,13 +31,13 @@ def patch_requests():
     data = request.get_json()
     id = data.get('id')
     rquest = Requests.query.filter_by(id=id).first()
+    asset = Assets.query.get(rquest.asset_id)
     if rquest:
         for key, value in data.items():
             setattr(rquest, key, value)
             status = "pending"
             if value == "Approved":
                 # Reduce the quantity of the asset
-                asset = Assets.query.get(rquest.asset_id)
                 if asset and asset.quantity > 0:
                     status = "Approved"
                     # print (asset.quantity)

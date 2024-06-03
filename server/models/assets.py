@@ -1,4 +1,3 @@
-from sqlalchemy_serializer import SerializerMixin
 from app import db
 
 class Assets(db.Model):

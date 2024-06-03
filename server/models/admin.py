@@ -1,7 +1,6 @@
-from sqlalchemy_serializer import SerializerMixin
 from app import db
 
-class Admin(db.Model, SerializerMixin):
+class Admin(db.Model):
     __tablename__ = 'admin'
     
     id = db.Column(db.Integer, primary_key=True)

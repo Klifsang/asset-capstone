@@ -1,7 +1,6 @@
-from sqlalchemy_serializer import SerializerMixin
 from app import db
 
-class Requests(db.Model, SerializerMixin):
+class Requests(db.Model):
     __tablename__ ='requests'
     
     id = db.Column(db.Integer, primary_key=True)

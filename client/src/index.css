@@ -277,3 +277,11 @@ article{
   padding: 10px;
   font-size: 16px;
 }
+
+.Approved{
+  background-color: teal;
+}
+
+.Rejected{
+  background-color: red;
+}

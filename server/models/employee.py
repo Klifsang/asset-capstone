@@ -1,7 +1,6 @@
-from sqlalchemy_serializer import SerializerMixin
 from app import db
     
-class Employee(db.Model, SerializerMixin):
+class Employee(db.Model):
     __tablename__ = 'employees'
     
     id = db.Column(db.Integer, primary_key=True)

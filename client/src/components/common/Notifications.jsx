@@ -46,7 +46,7 @@ const Notifications = () => {
     <div className="App">
       <h1>Notifications</h1>
       {notifs.map((notification) => (
-        <Collapsible title={`Request for ${notification.assetname} was ${notification.status}`}>
+        <Collapsible title={`Request for ${notification.assetname} was ${notification.status}         `}>
           <p>This is the content of section 1.</p>
         </Collapsible>
       ))}

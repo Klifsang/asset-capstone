@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HttpClient from "../../HttpClient";
+import Celebrate from "./Celebrate";
 
 const Collapsible = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,7 +48,7 @@ const Notifications = () => {
       <h1>Notifications</h1>
       {notifs.map((notification) => (
         <Collapsible title={`Request for ${notification.assetname} was ${notification.status}         `}>
-          <p>This is the content of section 1.</p>
+          <Celebrate/>
         </Collapsible>
       ))}
     </div>

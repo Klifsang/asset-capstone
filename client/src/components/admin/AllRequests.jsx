@@ -34,7 +34,6 @@ const AllRequests = () => {
         </tr>
       </thead>
       <tbody>
-        {/* {requests.map((request) => ( */}
         {requests.map((request) => (
           <tr>
           <td data-label = "Asset">{request.assetname}</td>
@@ -51,7 +50,7 @@ const AllRequests = () => {
         ))}
       </tbody>
     </table>
-    <blockquote> Staff </blockquote>
+    <blockquote> All Requests </blockquote>
   </>
   )
 }

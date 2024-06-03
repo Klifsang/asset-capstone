@@ -39,11 +39,13 @@ def patch_requests():
                 # Reduce the quantity of the asset
                 asset = Assets.query.get(rquest.asset_id)
                 if asset and asset.quantity > 0:
-                    status = "approved"
-                    print (asset.quantity)
+                    status = "Approved"
+                    # print (asset.quantity)
                     asset.quantity -= 1
-                notif = Notifications(request_id=id, user_id=rquest.user_id, status=status, asset_id=rquest.asset_id, assetname=asset.assetname)
-                db.session.add(notif)
+            elif value == "Rejected":
+                status = "Rejected"
+            notif = Notifications(request_id=id, user_id=rquest.user_id, status=status, asset_id=rquest.asset_id, assetname=asset.assetname)
+            db.session.add(notif)
             db.session.commit()
     return {"message": "Request updated successfully"}, 201
 

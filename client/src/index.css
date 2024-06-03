@@ -97,6 +97,10 @@ fieldset{
     background-color: #000;
     color: aliceblue;
 }
+.button-black:active {
+  background-color: #000;
+  color: aliceblue;
+}
 
 .profile{
     width: 150px;

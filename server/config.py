@@ -8,7 +8,7 @@ class ApplicationConfig:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     # SQLALCHEMY_ECHO = True
     # postgresql://postgres:DWJNNRBfzxviIeroiZkubofqvDueDhUy@viaduct.proxy.rlwy.net:21766/railway
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:PRnMWyVQLqPzhlHjhDMIbffyPaFqBxOo@monorail.proxy.rlwy.net:19147/railway' 
+    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:yrHUBmkyYBIBpiUPEIyFBRRZUYUYFRBY@monorail.proxy.rlwy.net:41694/railway' 
     # SQLALCHEMY_DATABASE_URI = r"sqlite:///./app.sqlite"
     SESSION_TYPE = "sqlalchemy"
     SESSION_SQLALCHEMY = db

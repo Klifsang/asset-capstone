@@ -7,6 +7,7 @@ with app.app_context():
     from models.employee import Employee
     from models.requests import Requests
     from models.databaseconfig import db
+    db.drop_all()
     assets = [
         {
         "assetname": "macbook",
@@ -91,8 +92,8 @@ with app.app_context():
             availability=asset['availability'],
             quantity=asset['quantity']
         )
-        db.session.add(new_asset)
-    db.session.commit()
+    #     db.session.add(new_asset)
+    # db.session.commit()
     
 
     admin1 = Admin(
@@ -117,7 +118,7 @@ with app.app_context():
         email='wiclifsang@gmail.com', 
         department='Medical', 
         password=bcrypt.generate_password_hash('password').decode('utf-8'),
-        username='Weldon', 
+        username='klifsang', 
         phonenumber='0123456789', 
         address='112,bomet', 
         status='pending',
@@ -182,6 +183,6 @@ with app.app_context():
         returnstatus="pending"
     )
     
-    db.session.add_all([admin1, admin2, employee1, employee2, employee3, employee4, req, req2])
-    db.session.commit()
+    # db.session.add_all([admin1, admin2, employee1, employee2, employee3, employee4, req, req2])
+    # db.session.commit()
 

@@ -279,9 +279,9 @@ article{
 }
 
 .Approved{
-  background-color: teal;
+  color: green;
 }
 
 .Rejected{
-  background-color: red;
+  color: red;
 }

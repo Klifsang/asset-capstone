@@ -2,11 +2,18 @@ import React, { useEffect, useState } from "react";
 import HttpClient from "../../HttpClient";
 import Celebrate from "./Celebrate";
 
-const Collapsible = ({ title, children }) => {
+const Collapsible = ({ title, children, onRead, id }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
     setIsOpen(!isOpen);
+    handleReadClick()
+  };
+
+  const handleReadClick = () => {
+    if (onRead) {
+      onRead(id);
+    }
   };
 
   return (
@@ -15,7 +22,11 @@ const Collapsible = ({ title, children }) => {
         <h2>{title}</h2>
         <span>{isOpen ? "-" : "+"}</span>
       </div>
-      {isOpen && <div className="collapsible-content">{children}</div>}
+      {isOpen && (
+        <div className="collapsible-content">
+          {children}
+        </div>
+      )}
     </div>
   );
 };
@@ -36,8 +47,8 @@ const Notifications = () => {
   const handleRead = async (key) => {
     console.log(key);
     const notificationId = parseInt(key);
-    const response = await HttpClient.delete(
-      `/api/notifications/${notificationId}`
+    const response = await HttpClient.post(
+      `/api/mark_as_read/${notificationId}`
     );
     getNotifications();
     console.log(response);
@@ -47,8 +58,13 @@ const Notifications = () => {
     <div className="App">
       <h1>Notifications</h1>
       {notifs.map((notification) => (
-        <Collapsible title={`Request for ${notification.assetname} was ${notification.status}         `}>
-          <Celebrate/>
+        <Collapsible
+          key={notification.id}
+          id={notification.id}
+          title={`Request for ${notification.assetname} was ${notification.status}`}
+          onRead={handleRead}
+        >
+          {notification.status === "Approved" && <Celebrate />}
         </Collapsible>
       ))}
     </div>

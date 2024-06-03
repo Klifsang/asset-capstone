@@ -12,7 +12,7 @@ from endpoints.admin_api import delete_admin, patch_admin, register_admin, get_a
 from endpoints.assets_api import add_assets, delete_assets, patch_assets, get_assets, get_assets_for_user
 from endpoints.requests_api import add_requests, patch_requests, delete_requests, get_requests, my_requests
 from endpoints.auth_api import get_current_user, login, logout
-from endpoints.notifications_api import get_notifications, delete_notifications
+from endpoints.notifications_api import get_notifications, delete_notifications,mark_as_read
 import os
 
 app = Flask(
@@ -103,7 +103,7 @@ app.add_url_rule('/api/myrequests/get', 'my_requests', login_required(my_request
     # Notifications
 app.add_url_rule('/api/notifications', 'get_notifications', login_required(get_notifications), methods=['GET'])
 app.add_url_rule('/api/notifications/<int:id>', 'del_notifications', login_required(delete_notifications), methods=['DELETE'])
-
+app.add_url_rule('/api/mark_as_read/<int:id>', 'mark_as_read', login_required(mark_as_read), methods=['POST'])
 
     # Authentication
 app.add_url_rule('/api/checksession', 'checksession', get_current_user, methods=['GET'])

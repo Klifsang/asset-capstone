@@ -31,8 +31,8 @@ def patch_requests():
     data = request.get_json()
     id = data.get('id')
     rquest = Requests.query.filter_by(id=id).first()
-    asset = Assets.query.get(rquest.asset_id)
     if rquest:
+        asset = Assets.query.get(rquest.asset_id)
         for key, value in data.items():
             setattr(rquest, key, value)
             status = "pending"
@@ -44,8 +44,9 @@ def patch_requests():
                     asset.quantity -= 1
             elif value == "Rejected":
                 status = "Rejected"
-            notif = Notifications(request_id=id, user_id=rquest.user_id, status=status, asset_id=rquest.asset_id, assetname=asset.assetname)
-            db.session.add(notif)
+            if status != "pending":
+                notif = Notifications(request_id=id, user_id=rquest.user_id, status=status, asset_id=rquest.asset_id, assetname=asset.assetname)
+                db.session.add(notif)
             db.session.commit()
     return {"message": "Request updated successfully"}, 201
 

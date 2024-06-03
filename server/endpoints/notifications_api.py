@@ -7,7 +7,7 @@ def get_notifications():
     Returns a list of all notifications
     """
     id = session["user_id"]
-    notifs = Notifications.query.filter_by(user_id = id).all().order_by.desc()
+    notifs = Notifications.query.filter_by(user_id = id).all()
     return jsonify([notif.to_dict() for notif in notifs]),200
 
 def delete_notifications(id):

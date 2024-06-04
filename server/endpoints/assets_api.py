@@ -7,7 +7,7 @@ def add_assets():
     assetname = data.get('assetname')
     description = data.get('description')
     condition = data.get('condition')
-    availability = data.get('availability')
+    availability = "available"
     quantity = data.get('quantity')
     asset = Assets(assetname=assetname, description=description, condition=condition, availability=availability, quantity=quantity)
     

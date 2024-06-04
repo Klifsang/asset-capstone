@@ -45,12 +45,12 @@ const AllRequests = () => {
               </td>
               <td data-label="Action">
                 <span>
-                  {request.status === "Approved" && (
+                  {request.status == "Approved" && (
                     <button className="shyButton" onClick={() => approve(request.id, "Recalled")}>
                       Recall
                     </button>
                   )}
-                  {request.status !== "Approved" && (
+                  {request.status != "Approved" && (
                     <>
                       <button className="shyButton" onClick={() => approve(request.id, "Approved")}>
                         Approve

@@ -39,7 +39,9 @@ const AllRequests = () => {
           <td data-label = "Asset">{request.assetname}</td>
           <td data-label = "Requested By">{request.username}</td>
           <td data-label = "Quantity">{request.quantity}</td>
-          <td data-label = "Status">{request.status}</td>
+          <td data-label = "Status">
+            <span className={request.status}>{request.status}</span>
+          </td>
           <td data-label = "Action">
             <span>
             <button className="shyButton" onClick={() => approve(request.id, "Approved")}>Approve</button>

@@ -283,9 +283,13 @@ article{
 }
 
 .Approved{
-  color: green;
+  background-color: green;
+  border-radius: 3px;
+  color: #f7f7f7;
 }
 
 .Rejected{
-  color: red;
+  background-color: red;
+  border-radius: 3px;
+  color: #f7f7f7;
 }

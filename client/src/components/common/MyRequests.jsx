@@ -38,7 +38,9 @@ const MyRequests = () => {
           <td data-label = "Asset">{request.assetname}</td>
           <td data-label = "Requested By">{request.username}</td>
           <td data-label = "Quantity">{request.quantity}</td>
-          <td data-label = "Status" className={request.status}>{request.status}</td>
+          <td data-label = "Status">
+            <span className={request.status}>{request.status}</span>
+          </td>
           <td data-label = "Action">
             <button className="shyButton" disabled={request.status=="Approved"} onClick={() => deleteRequest(request.id)}>Delete Request</button>
           </td>

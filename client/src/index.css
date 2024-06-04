@@ -286,10 +286,12 @@ article{
   background-color: green;
   border-radius: 3px;
   color: #f7f7f7;
+  padding: 2px;
 }
 
 .Rejected{
   background-color: red;
   border-radius: 3px;
   color: #f7f7f7;
+  padding: 2px;
 }

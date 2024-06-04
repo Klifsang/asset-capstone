@@ -40,7 +40,7 @@ const MyRequests = () => {
           <td data-label = "Quantity">{request.quantity}</td>
           <td data-label = "Status" className={request.status}>{request.status}</td>
           <td data-label = "Action">
-            <button className="shyButton" disabled={request.status=="Rejected"} onClick={() => deleteRequest(request.id)}>Delete Request</button>
+            <button className="shyButton" disabled={request.status=="Approved"} onClick={() => deleteRequest(request.id)}>Delete Request</button>
           </td>
           </tr>
         ))}

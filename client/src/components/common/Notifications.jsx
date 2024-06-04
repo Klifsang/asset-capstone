@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import HttpClient from "../../HttpClient";
 import Celebrate from "./Celebrate";
+import sadPic from "../../../public/pictures/declined.jpg";
 
 const Collapsible = ({ title, children, onRead, id }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,6 +66,12 @@ const Notifications = () => {
           onRead={handleRead}
         >
           {notification.status === "Approved" && <Celebrate />}
+          {notification.status === "Rejected" && (
+            <div className="rejected">
+              <h2>Request Rejected</h2>
+              <img src={sadPic} alt="Sorry to disappoint" />
+            </div>
+          )}
         </Collapsible>
       ))}
     </div>

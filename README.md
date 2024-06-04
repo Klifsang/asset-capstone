@@ -1,9 +1,8 @@
 # Asset-Ace 
-# README for Flask Application
 
 ## Overview
 
-This Flask application is designed to manage employee and admin records, asset inventory, requests, and notifications. It provides various REST API endpoints for CRUD operations and authentication.
+Asset-Ace is designed to manage employee and admin records, asset inventory, requests, and notifications. It provides various REST API endpoints for CRUD operations and authentication.
 
 ## Project Structure
 
@@ -17,14 +16,13 @@ This Flask application is designed to manage employee and admin records, asset i
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
-   cd <repository-name>
+   git clone https://github.com/Klifsang/asset-capstone.git
+   cd server
    ```
 
 2. **Set up a virtual environment**:
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   pipenv shell
    ```
 
 3. **Install dependencies**:
@@ -208,5 +206,3 @@ Contributions are welcome! Please follow these steps:
 This project is licensed under the MIT License.
 
 ---
-
-This readme provides an overview of the application, its structure, installation steps, API endpoints, middleware, custom decorators, and error handling. For more detailed information on each part, refer to the source code and comments within the codebase.

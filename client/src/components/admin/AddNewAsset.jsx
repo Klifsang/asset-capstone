@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const AddNewAsset = () => {
   const [asset, setAsset] = useState({
-    assetname: '',
-    quantity: '',
-    condition: '',
-    description: '',
+    assetname: "",
+    quantity: "",
+    condition: "",
+    description: "",
   });
 
   const handleInputChange = (e) => {
@@ -28,6 +28,11 @@ const AddNewAsset = () => {
       <form className="inputs" onSubmit={submitAsset}>
         <div className="flex one center">
           <div>
+            <div style="width: 200px">
+              <label class="dropimage">
+                <input title="Drop image or click me" type="file" />
+              </label>
+            </div>
             <label>Asset Name</label>
             <input
               type="text"

@@ -16,9 +16,18 @@ const AddNewAsset = () => {
     }));
   };
 
-  const submitAsset = (e) => {
+  const submitAsset = async(e) => {
     e.preventDefault();
     // Handle form submission
+    const response = await HttpClient.post("/api/assets/add", {
+      assetname: asset.assetname,
+      quantity: asset.quantity,
+      condition: asset.condition,
+      description: asset.description,
+      status: "available",
+      image: "https://picsum.photos/200/300"
+    })
+    console.log(response.data);
   };
 
   return (
